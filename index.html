@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ficha Técnica de Rebobinado de Motores</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>FICHA TÉCNICA DE REBOBINADO DE MOTOR</h1>
+    <p>Registro técnico de reparación y mantenimiento</p>
+</header>
+
+
+<section>
+
+<h2>1. ORDEN DE TRABAJO</h2>
+
+<div class="grid">
+
+<label>
+Orden No.
+<input id="orden">
+</label>
+
+<label>
+Fecha
+<input type="date" id="fecha">
+</label>
+
+<label>
+Cliente
+<input id="cliente">
+</label>
+
+<label>
+Teléfono
+<input id="telefono">
+</label>
+
+<label>
+Técnico
+<input id="tecnico">
+</label>
+
+<label>
+Entrega
+<input type="date" id="entrega">
+</label>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>2. DATOS DEL MOTOR</h2>
+
+
+<div class="grid">
+
+<label>
+Marca
+<input id="marca">
+</label>
+
+
+<label>
+Modelo
+<input id="modelo">
+</label>
+
+
+<label>
+Potencia HP
+<input id="hp">
+</label>
+
+
+<label>
+Voltaje
+<input id="voltaje">
+</label>
+
+
+<label>
+Corriente
+<input id="corriente">
+</label>
+
+
+<label>
+RPM
+<input id="rpm">
+</label>
+
+
+<label>
+Frecuencia Hz
+<input id="hz">
+</label>
+
+
+<label>
+Tipo
+<select id="tipo">
+<option>Monofásico</option>
+<option>Trifásico</option>
+</select>
+</label>
+
+
+<label>
+Polos
+<input id="polos">
+</label>
+
+
+<label>
+Ranuras
+<input id="ranuras">
+</label>
+
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>3. DATOS DEL ESTATOR</h2>
+
+
+<div class="grid">
+
+
+<label>
+Paso
+<input id="paso">
+</label>
+
+
+<label>
+Número de grupos
+<input id="grupos">
+</label>
+
+
+<label>
+Número de bobinas
+<input id="bobinas">
+</label>
+
+
+<label>
+Conexión
+<input id="conexion">
+</label>
+
+
+<label>
+Sentido de bobinado
+<input id="sentido">
+</label>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+<h2>4. DATOS DEL ROTOR</h2>
+
+
+<div class="grid">
+
+
+<label>
+Tipo de rotor
+<select id="rotor">
+<option>Jaula de ardilla</option>
+<option>Rotor bobinado</option>
+<option>Imanes permanentes</option>
+</select>
+</label>
+
+
+<label>
+Diámetro rotor
+<input id="diametroRotor">
+</label>
+
+
+<label>
+Longitud paquete
+<input id="longitudRotor">
+</label>
+
+
+<label>
+Número de barras
+<input id="barras">
+</label>
+
+
+<label>
+Estado del eje
+<input id="eje">
+</label>
+
+
+<label>
+Entrehierro
+<input id="entrehierro">
+</label>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+<h2>5. DATOS DEL BOBINADO</h2>
+
+
+<table>
+
+<tr>
+
+<th>Bobinado</th>
+<th>Calibre</th>
+<th>Hilos</th>
+<th>Espiras</th>
+<th>Grupos</th>
+<th>Paso</th>
+
+</tr>
+
+
+<tr>
+
+<td>Principal</td>
+<td><input id="calibrePrincipal"></td>
+<td><input id="hilosPrincipal"></td>
+<td><input id="espirasPrincipal"></td>
+<td><input id="grupoPrincipal"></td>
+<td><input id="pasoPrincipal"></td>
+
+</tr>
+
+
+<tr>
+
+<td>Arranque</td>
+<td><input id="calibreArranque"></td>
+<td><input id="hilosArranque"></td>
+<td><input id="espirasArranque"></td>
+<td><input id="grupoArranque"></td>
+<td><input id="pasoArranque"></td>
+
+</tr>
+
+
+<tr>
+
+<td>Auxiliar</td>
+<td><input id="calibreAuxiliar"></td>
+<td><input id="hilosAuxiliar"></td>
+<td><input id="espirasAuxiliar"></td>
+<td><input id="grupoAuxiliar"></td>
+<td><input id="pasoAuxiliar"></td>
+
+</tr>
+
+
+</table>
+
+
+</section>
+
+
+
+
+<section>
+
+<h2>6. OBSERVACIONES</h2>
+
+<textarea id="observaciones"></textarea>
+
+
+</section>
+
+
+
+<section>
+
+<h2>7. CROQUIS</h2>
+
+<div class="croquis">
+
+Área para dibujo del estator, rotor y conexiones
+
+</div>
+
+
+</section>
+
+
+
+<div class="botones">
+
+<button onclick="generarPDF()">
+Guardar PDF
+</button>
+
+
+<button onclick="window.print()">
+Imprimir
+</button>
+
+
+<button onclick="location.reload()">
+Nuevo formulario
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#e9ecef;
+    margin:0;
+    padding:20px;
+
+}
+
+
+
+.contenedor{
+
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+
+}
+
+
+
+header{
+
+    text-align:center;
+    border-bottom:3px solid #003366;
+    margin-bottom:20px;
+
+}
+
+
+
+header h1{
+
+    color:#003366;
+    margin-bottom:5px;
+
+}
+
+
+header p{
+
+    margin-top:0;
+    color:#555;
+
+}
+
+
+
+h2{
+
+    background:#003366;
+    color:white;
+    padding:8px;
+    font-size:16px;
+    margin-top:25px;
+
+}
+
+
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+
+}
+
+
+
+label{
+
+    font-weight:bold;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+
+}
+
+
+
+input,
+select,
+textarea{
+
+
+    padding:8px;
+    border:1px solid #777;
+    border-radius:4px;
+    font-size:14px;
+
+}
+
+
+
+textarea{
+
+    width:100%;
+    height:120px;
+    resize:none;
+
+}
+
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+
+}
+
+
+
+th{
+
+    background:#003366;
+    color:white;
+    padding:8px;
+
+}
+
+
+
+td{
+
+    border:1px solid #444;
+    padding:5px;
+    text-align:center;
+
+}
+
+
+
+td input{
+
+    width:100%;
+    border:none;
+
+}
+
+
+
+.croquis{
+
+    height:250px;
+    border:2px dashed #555;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    font-style:italic;
+
+}
+
+
+
+.botones{
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+
+}
+
+
+
+button{
+
+    background:#003366;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+
+}
+
+
+
+button:hover{
+
+    background:#0055aa;
+
+}
+
+
+
+
+@media print{
+
+
+body{
+
+    background:white;
+    padding:0;
+
+}
+
+
+
+.contenedor{
+
+    box-shadow:none;
+    width:100%;
+
+}
+
+
+
+.botones{
+
+    display:none;
+
+}
+
+
+
+input,
+select,
+textarea{
+
+    border:none;
+
+}
+
+
+
+h2{
+
+    color:black;
+    background:#ddd;
+
+}
+
+
+
+}
