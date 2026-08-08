@@ -1,249 +1,263 @@
-*{
-    box-sizing:border-box;
+/* ==========================================
+   FICHA DE REBOBINADO MOTOR MONOFÁSICO
+   Hoja de estilos
+   ========================================== */
+
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    color: #222;
+    margin: 0;
+    padding: 20px;
 }
 
 
-body{
-
-    font-family:Arial, Helvetica, sans-serif;
-    background:#e9ecef;
-    margin:0;
-    padding:20px;
-
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 
+/* ENCABEZADOS */
 
-.contenedor{
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+    color: #003366;
+}
 
-    max-width:1100px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,.2);
-
+h2 {
+    text-align: center;
+    font-weight: normal;
+    margin-top: 5px;
+    color: #555;
 }
 
 
-
-header{
-
-    text-align:center;
-    border-bottom:3px solid #003366;
-    margin-bottom:20px;
-
+h3 {
+    background: #003366;
+    color: white;
+    padding: 8px 12px;
+    margin-top: 25px;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 
+/* SECCIONES */
 
-header h1{
-
-    color:#003366;
-    margin-bottom:5px;
-
+section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 
-header p{
+/* FORMULARIOS */
 
-    margin-top:0;
-    color:#555;
-
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
 }
-
-
-
-h2{
-
-    background:#003366;
-    color:white;
-    padding:8px;
-    font-size:16px;
-    margin-top:25px;
-
-}
-
-
-
-.grid{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-
-}
-
-
-
-label{
-
-    font-weight:bold;
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-
-}
-
 
 
 input,
-select,
-textarea{
+textarea {
+    width: 100%;
+    padding: 7px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 14px;
+}
 
 
-    padding:8px;
-    border:1px solid #777;
-    border-radius:4px;
-    font-size:14px;
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+
+/* GRID DE DATOS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+/* TABLAS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+th {
+    background: #ddd;
+    font-weight: bold;
+}
+
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 6px;
+    text-align: center;
+}
+
+
+td input {
+    margin: 0;
+    padding: 4px;
+}
+
+
+/* BOTÓN */
+
+button {
+
+    display: block;
+    margin: 30px auto 10px;
+
+    background: #0066cc;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px 30px;
+
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    background: #004c99;
 
 }
 
 
 
-textarea{
+/* ==========================================
+   IMPRESIÓN / PDF
+   ========================================== */
 
-    width:100%;
-    height:120px;
-    resize:none;
-
-}
+@media print {
 
 
+    body {
 
-table{
+        background: white;
+        padding: 0;
 
-    width:100%;
-    border-collapse:collapse;
-    margin-top:10px;
-
-}
+    }
 
 
+    .container {
 
-th{
+        width: 100%;
+        max-width: none;
 
-    background:#003366;
-    color:white;
-    padding:8px;
+        box-shadow: none;
+        border-radius: 0;
 
-}
+        padding: 10mm;
 
-
-
-td{
-
-    border:1px solid #444;
-    padding:5px;
-    text-align:center;
-
-}
+    }
 
 
+    button {
 
-td input{
+        display: none;
 
-    width:100%;
-    border:none;
-
-}
+    }
 
 
+    input,
+    textarea {
 
-.croquis{
+        border: none;
+        background: transparent;
 
-    height:250px;
-    border:2px dashed #555;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#777;
-    font-style:italic;
+        padding: 0;
 
-}
+    }
 
 
+    h3 {
 
-.botones{
+        background: #003366 !important;
+        color: white !important;
 
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:30px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
 
-}
-
+    }
 
 
-button{
+    section {
 
-    background:#003366;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:15px;
+        page-break-inside: avoid;
+
+    }
+
+
+    table {
+
+        page-break-inside: avoid;
+
+    }
 
 }
 
 
 
-button:hover{
+/* ==========================================
+   RESPONSIVE PARA PANTALLAS PEQUEÑAS
+   ========================================== */
 
-    background:#0055aa;
-
-}
-
-
+@media(max-width:700px) {
 
 
-@media print{
+    .grid {
+
+        grid-template-columns: 1fr;
+
+    }
 
 
-body{
+    .container {
 
-    background:white;
-    padding:0;
+        padding: 15px;
 
-}
-
+    }
 
 
-.contenedor{
+    h1 {
 
-    box-shadow:none;
-    width:100%;
+        font-size: 22px;
 
-}
-
-
-
-.botones{
-
-    display:none;
-
-}
-
-
-
-input,
-select,
-textarea{
-
-    border:none;
-
-}
-
-
-
-h2{
-
-    color:black;
-    background:#ddd;
-
-}
-
-
+    }
 
 }

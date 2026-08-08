@@ -1,367 +1,314 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Rebobinado - Motor Monofásico</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ficha Técnica de Rebobinado de Motores</title>
-
-<link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 
 <body>
 
-<div class="contenedor">
+<div class="container">
 
-<header>
-    <h1>FICHA TÉCNICA DE REBOBINADO DE MOTOR</h1>
-    <p>Registro técnico de reparación y mantenimiento</p>
-</header>
+    <h1>Ficha Técnica de Rebobinado</h1>
+    <h2>Motor Monofásico</h2>
 
+    <form id="motorForm">
 
-<section>
+        <!-- DATOS GENERALES -->
+        <section>
+            <h3>1. Datos generales del motor</h3>
 
-<h2>1. ORDEN DE TRABAJO</h2>
+            <label>
+    Tipo de motor:
+    <select name="tipo" id="tipoMotor">
 
-<div class="grid">
+        <option value="Motor monofásico de inducción">
+            Monofásico de inducción
+        </option>
 
-<label>
-Orden No.
-<input id="orden">
+        <option value="Motor trifásico de inducción">
+            Trifásico de inducción
+        </option>
+
+        <option value="Motor universal">
+            Universal (AC/DC)
+        </option>
+
+        <option value="Motor corriente continua">
+            Corriente continua (DC)
+        </option>
+
+        <option value="Otro">
+            Otro
+        </option>
+
+    </select>
 </label>
 
-<label>
-Fecha
-<input type="date" id="fecha">
-</label>
 
 <label>
-Cliente
-<input id="cliente">
+    Número de fases:
+    <select name="fases">
+
+        <option value="1">1 fase</option>
+        <option value="3">3 fases</option>
+        <option value="DC">DC</option>
+
+    </select>
 </label>
 
-<label>
-Teléfono
-<input id="telefono">
-</label>
 
 <label>
-Técnico
-<input id="tecnico">
+    Sistema de arranque:
+    <input 
+        type="text" 
+        name="arranque"
+        value="Capacitor permanente + capacitor de arranque">
 </label>
 
-<label>
-Entrega
-<input type="date" id="entrega">
-</label>
+            <label>
+                Observación general:
+                <textarea name="observaciones"></textarea>
+            </label>
+
+        </section>
+
+
+        <!-- DATOS MECANICOS -->
+        <section>
+            <h3>2. Datos mecánicos</h3>
+
+            <div class="grid">
+
+                <label>
+                    Diámetro rotor (mm):
+                    <input type="number" name="rotorDiametro">
+                </label>
+
+                <label>
+                    Largo rotor (mm):
+                    <input type="number" name="rotorLargo">
+                </label>
+
+                <label>
+                    Diámetro exterior estator (mm):
+                    <input type="number" name="estatorExterior">
+                </label>
+
+                <label>
+                    Diámetro interior estator (mm):
+                    <input type="number" name="estatorInterior">
+                </label>
+
+                <label>
+                    Largo paquete estator (mm):
+                    <input type="number" name="estatorLargo">
+                </label>
+
+                <label>
+                    Número de ranuras:
+                    <input type="number" name="ranuras">
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAPACITORES -->
+        <section>
+
+            <h3>3. Capacitores</h3>
+
+            <div class="grid">
+
+                <label>
+                    Capacitor permanente (µF):
+                    <input type="number" name="capPermanente">
+                </label>
+
+                <label>
+                    Voltaje capacitor permanente:
+                    <input type="number" name="voltCapPermanente">
+                </label>
+
+                <label>
+                    Capacitor arranque (µF):
+                    <input type="number" name="capArranque">
+                </label>
+
+                <label>
+                    Voltaje capacitor arranque:
+                    <input type="number" name="voltCapArranque">
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- TERMINALES -->
+        <section>
+
+            <h3>4. Bornera</h3>
+
+            <table>
+
+                <tr>
+                    <th>Terminal</th>
+                    <th>Color</th>
+                    <th>Función</th>
+                </tr>
+
+                <tr>
+                    <td><input name="termU1" value="U1"></td>
+                    <td><input name="colorU1" value="Rojo"></td>
+                    <td><input name="funcU1" value="Devanado principal"></td>
+                </tr>
+
+                <tr>
+                    <td><input name="termU2" value="U2"></td>
+                    <td><input name="colorU2" value="Verde"></td>
+                    <td><input name="funcU2" value="Devanado principal"></td>
+                </tr>
+
+                <tr>
+                    <td><input name="termV1" value="V1"></td>
+                    <td><input name="colorV1" value="Azul"></td>
+                    <td><input name="funcV1" value="Devanado auxiliar"></td>
+                </tr>
+
+                <tr>
+                    <td><input name="termV2" value="V2"></td>
+                    <td><input name="colorV2" value="Negro"></td>
+                    <td><input name="funcV2" value="Devanado auxiliar"></td>
+                </tr>
+
+                <tr>
+                    <td><input name="termW1" value="W1"></td>
+                    <td><input name="colorW1" value="Blanco"></td>
+                    <td><input name="funcW1" value="Conexión capacitores"></td>
+                </tr>
+
+                <tr>
+                    <td><input name="termW2" value="W2"></td>
+                    <td><input name="colorW2" value="Amarillo"></td>
+                    <td><input name="funcW2" value="Interruptor centrífugo"></td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- DEVANADO AUXILIAR -->
+        <section>
+
+            <h3>5. Devanado auxiliar</h3>
+
+            <label>
+                Material:
+                <input name="materialAux" value="Aluminio original / Cobre reemplazo">
+            </label>
+
+            <label>
+                Calibre original:
+                <input name="calibreAuxOriginal" value="0.90 mm Al">
+            </label>
+
+            <label>
+                Calibre cobre:
+                <input name="calibreAuxCobre" value="AWG 21">
+            </label>
+
+
+            <table>
+
+                <tr>
+                    <th>Espiras</th>
+                    <th>Bobina 1</th>
+                    <th>Bobina 2</th>
+                </tr>
+
+                <tbody id="auxiliar">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- DEVANADO PRINCIPAL -->
+        <section>
+
+            <h3>6. Devanado principal</h3>
+
+            <label>
+                Material:
+                <input name="materialPrincipal" value="Aluminio original / Cobre reemplazo">
+            </label>
+
+            <label>
+                Calibre original:
+                <input name="calibrePrincipalOriginal" value="1.05 mm Al">
+            </label>
+
+            <label>
+                Calibre cobre:
+                <input name="calibrePrincipalCobre" value="AWG 20">
+            </label>
+
+
+            <table>
+
+                <tr>
+                    <th>Espiras</th>
+                    <th>Bobina 1</th>
+                    <th>Bobina 2</th>
+                </tr>
+
+                <tbody id="principal">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- MATERIAL -->
+        <section>
+
+            <h3>7. Material recomendado</h3>
+
+            <label>
+                Peso cobre marcha:
+                <input name="pesoMarcha" value="600 g AWG 20">
+            </label>
+
+            <label>
+                Peso cobre arranque:
+                <input name="pesoArranque" value="500 g AWG 21">
+            </label>
+
+        </section>
+
+
+        <button type="button" id="btnPDF">
+            Generar PDF
+        </button>
+
+
+    </form>
 
 </div>
 
-</section>
-
-
-
-<section>
-
-<h2>2. DATOS DEL MOTOR</h2>
-
-
-<div class="grid">
-
-<label>
-Marca
-<input id="marca">
-</label>
-
-
-<label>
-Modelo
-<input id="modelo">
-</label>
-
-
-<label>
-Potencia HP
-<input id="hp">
-</label>
-
-
-<label>
-Voltaje
-<input id="voltaje">
-</label>
-
-
-<label>
-Corriente
-<input id="corriente">
-</label>
-
-
-<label>
-RPM
-<input id="rpm">
-</label>
-
-
-<label>
-Frecuencia Hz
-<input id="hz">
-</label>
-
-
-<label>
-Tipo
-<select id="tipo">
-<option>Monofásico</option>
-<option>Trifásico</option>
-</select>
-</label>
-
-
-<label>
-Polos
-<input id="polos">
-</label>
-
-
-<label>
-Ranuras
-<input id="ranuras">
-</label>
-
-
-</div>
-
-</section>
-
-
-
-<section>
-
-<h2>3. DATOS DEL ESTATOR</h2>
-
-
-<div class="grid">
-
-
-<label>
-Paso
-<input id="paso">
-</label>
-
-
-<label>
-Número de grupos
-<input id="grupos">
-</label>
-
-
-<label>
-Número de bobinas
-<input id="bobinas">
-</label>
-
-
-<label>
-Conexión
-<input id="conexion">
-</label>
-
-
-<label>
-Sentido de bobinado
-<input id="sentido">
-</label>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<section>
-
-<h2>4. DATOS DEL ROTOR</h2>
-
-
-<div class="grid">
-
-
-<label>
-Tipo de rotor
-<select id="rotor">
-<option>Jaula de ardilla</option>
-<option>Rotor bobinado</option>
-<option>Imanes permanentes</option>
-</select>
-</label>
-
-
-<label>
-Diámetro rotor
-<input id="diametroRotor">
-</label>
-
-
-<label>
-Longitud paquete
-<input id="longitudRotor">
-</label>
-
-
-<label>
-Número de barras
-<input id="barras">
-</label>
-
-
-<label>
-Estado del eje
-<input id="eje">
-</label>
-
-
-<label>
-Entrehierro
-<input id="entrehierro">
-</label>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<section>
-
-<h2>5. DATOS DEL BOBINADO</h2>
-
-
-<table>
-
-<tr>
-
-<th>Bobinado</th>
-<th>Calibre</th>
-<th>Hilos</th>
-<th>Espiras</th>
-<th>Grupos</th>
-<th>Paso</th>
-
-</tr>
-
-
-<tr>
-
-<td>Principal</td>
-<td><input id="calibrePrincipal"></td>
-<td><input id="hilosPrincipal"></td>
-<td><input id="espirasPrincipal"></td>
-<td><input id="grupoPrincipal"></td>
-<td><input id="pasoPrincipal"></td>
-
-</tr>
-
-
-<tr>
-
-<td>Arranque</td>
-<td><input id="calibreArranque"></td>
-<td><input id="hilosArranque"></td>
-<td><input id="espirasArranque"></td>
-<td><input id="grupoArranque"></td>
-<td><input id="pasoArranque"></td>
-
-</tr>
-
-
-<tr>
-
-<td>Auxiliar</td>
-<td><input id="calibreAuxiliar"></td>
-<td><input id="hilosAuxiliar"></td>
-<td><input id="espirasAuxiliar"></td>
-<td><input id="grupoAuxiliar"></td>
-<td><input id="pasoAuxiliar"></td>
-
-</tr>
-
-
-</table>
-
-
-</section>
-
-
-
-
-<section>
-
-<h2>6. OBSERVACIONES</h2>
-
-<textarea id="observaciones"></textarea>
-
-
-</section>
-
-
-
-<section>
-
-<h2>7. CROQUIS</h2>
-
-<div class="croquis">
-
-Área para dibujo del estator, rotor y conexiones
-
-</div>
-
-
-</section>
-
-
-
-<div class="botones">
-
-<button onclick="generarPDF()">
-Guardar PDF
-</button>
-
-
-<button onclick="window.print()">
-Imprimir
-</button>
-
-
-<button onclick="location.reload()">
-Nuevo formulario
-</button>
-
-
-</div>
-
-
-</div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 
 <script src="app.js"></script>
 
-
 </body>
-
 </html>
